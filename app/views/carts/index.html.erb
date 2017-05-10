@@ -1,5 +1,11 @@
 <div class="row">
   <div class="col-md-12">
+
+    <%= link_to("清空购物车", clean_carts_path,
+                method: :delete, class: "pull-right",
+                style: "text-decoration: underline;",
+                data: { confirm: "你确定要清空购物车吗？"} )%>
+
     <h2>购物车</h2>
     <table class="table table-bordered">
       <thead>
@@ -45,13 +51,6 @@
       <span class="pull-right">
         <!-- <span> 总计 *** RMB </span> -->
         <span>
-          <!-- <% sum = 0 %>
-          <% current_cart.cart_items.each do |cart_item| %>
-            <% if cart_item.product.price.present? %>
-              <% sum = sum + cart_item.quantity * cart_item.product.price %>
-            <% end %>
-          <% end %>
-          总计 <%= sum %> RMB -->
           总计 <%= render_cart_total_price(current_cart) %> RMB
         </span>
       </span>
