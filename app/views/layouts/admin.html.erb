@@ -15,8 +15,11 @@
           <li> <%= link_to("Products", admin_products_path) %> </li>
         </ul>
       </div>
-      <div class="col-md-10">
+      <div class="col-md-10 page-wrap">
         <%= yield %>
+      </div>
+      <div class="row site-footer">
+        <%= render "common/footer" %>
       </div>
     </div>
   </div>
