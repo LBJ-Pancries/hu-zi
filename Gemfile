@@ -36,6 +36,7 @@ gem 'font-awesome-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'acts_as_list'
+gem 'letter_opener', group: :development
 
 
 group :production do
