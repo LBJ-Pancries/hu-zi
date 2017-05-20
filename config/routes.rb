@@ -5,10 +5,13 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :products do
-    resources :orders
-      member do
-        patch :move_up
-        patch :move_down
+      resources :orders do
+        member do
+          post :cancel
+          post :ship
+          post :shipped
+          post :return
+        end
       end
     end
   end
