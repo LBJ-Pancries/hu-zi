@@ -23,7 +23,7 @@ html, body {
 }
 .page-wrap {
   min-height: 100%;
-  margin-bottom: 100px;
+  margin-bottom: -100px;
 }
 .page-wrap:after {
   content: "";
@@ -84,4 +84,45 @@ html, body {
 .custab:hover{
   box-shadow: 3px 3px 0px transparent;
   transition: 0.5s;
+}
+
+//footer样式定义
+.footer {
+    text-align: -webkit-left;
+    min-height: 250px;
+    background-color: #02061A;
+    padding: 15px 0;
+    color: #fff;
+    font-size: 14px;
+}
+
+//navbar样式定义
+//navbar中logo的样式定义
+.navbar-brand > img {
+   display: inline-block; //图片和链接文字显示在同一行
+   margin-right: 10px; //图片和链接文字拉开一点距离
+   width: 32px; //定制图片宽度
+   height: 32px; //定制图片高度
+}
+// .navbar-default {
+//     background-color: #f8f8f8;
+//     border-color: #e7e7e7;
+// }
+// .navbar-fixed-top {
+//     top: 0;
+//     border-width: 0 0 1px;
+// }
+// .container-fluid {
+//     margin-right: auto;
+//     margin-left: auto;
+//     padding-left: 15px;
+//     padding-right: 15px;
+// }
+
+//flashes的样式定义
+.alert {
+    padding: 15px;
+    margin-bottom: 0px; //与头图之间的距离
+    border: 1px solid transparent;
+    border-radius: 4px;
 }
