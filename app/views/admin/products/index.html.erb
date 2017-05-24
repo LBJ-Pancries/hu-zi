@@ -17,9 +17,7 @@
   <tbody>
     <% @products.each do |product| %>
       <tr>
-        <td>
-          <%= product.id %>
-        </td>
+        <td><%= product.id %></td>
         <td>
           <%= link_to product_path(product) do %>
             <% if product.image.present? %>
@@ -29,15 +27,9 @@
             <% end %>
           <% end %>
         </td>
-        <td>
-          <%= product.title %>
-        </td>
-        <td>
-          <%= product.quantity %>
-        </td>
-        <td>
-          <%= product.price %>
-        </td>
+        <td><%= product.title %></td>
+        <td><%= product.quantity %></td>
+        <td><%= product.price %></td>
         <td>
           <%= link_to("Edit", edit_admin_product_path(product), :class => "btn btn-xs btn-info") %>
           <%= link_to "向上", move_up_admin_product_path(product), method: :patch, :class => "btn btn-xs btn-danger" %>
