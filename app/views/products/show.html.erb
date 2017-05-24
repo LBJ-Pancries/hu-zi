@@ -8,7 +8,7 @@
     <% end %>
   </div>
   <div class="col-xs-12 col-md-4" style="margin-top: 10px;">
-    <div>作者:</div>
+    <div>作者:<%= @product.writer %></div>
     <div>出版社:</div>
     <div>译者:</div>
     <div>出版年:</div>
@@ -36,21 +36,17 @@
     </div>
   </div>
   <div class="col-md-12">
-    <div style="height:100px;">
       <h4>内容介绍...</h4>
       <hr>
       <p>
         <%= @product.description %>
       </p>
-    </div>
   </div>
   <div class="col-md-12">
-    <div style="height:100px;">
       <h4>作者介绍...</h4>
       <hr>
       <p>
         <%= @product.description %>
       </p>
-    </div>
   </div>
 </div>
