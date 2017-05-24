@@ -142,13 +142,26 @@ html, body {
     margin-right: -15px;
     margin-left: -15px;
 }
-.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+.navbar > .container .navbar-brand,
+.navbar > .container-fluid .navbar-brand {
     margin-left: 0px;
+}
+.navbar-default {
+   background-color: #f8f8f8;  //背景颜色
+
+  //  border-color: #e7e7e7; //边框色
+
+   margin-bottom: 10px; //底部 margin 不撑开距离
 }
 // .navbar-default {
 //     background-color: #f8f8f8;
 //     border-color: #e7e7e7;
 // }
+.navbar-default .navbar-brand {
+   color: #333; //字体颜色
+   padding: 10px 15px; //上下10px，左右15px
+   line-height: 30px; //文字行高
+}
 // .navbar-fixed-top {
 //     top: 0;
 //     border-width: 0 0 1px;
