@@ -1,26 +1,47 @@
 <div class="row">
-  <div class="col-md-6">
+  <h2 style="margin-bottom: 0px; margin-left: 20px;"><%= @product.title %></h2>
+  <div class="col-xs-12 col-md-6">
     <% if @product.image.present? %>
       <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
     <% else %>
       <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
     <% end %>
   </div>
-  <div class="col-md-6">
-    <h2><%= @product.title %></h2>
-    <div style="height:100px;">
-      <p>
-        <%= @product.description %>
-      </p>
-    </div>
+  <div class="col-xs-12 col-md-4" style="margin-top: 10px;">
+    <div>作者:</div>
+    <div>出版社:</div>
+    <div>译者:</div>
+    <div>出版年:</div>
+    <div>版次:</div>
+    <div>印次:</div>
+    <div>印数:</div>
+    <div>编与著:</div>
+    <div>参考文献:</div>
+    <div>索引:</div>
+    <div>作者微博:</div>
+    <div>译者微博:</div>
+    <div>出版社微博:</div>
+    <div>页数:</div>
+    <div>ISBN:</div>
     <div> 数量 ：<%= @product.quantity %></div>
-    <div class="product-price"> ￥ <%= @product.price %></div>
+    <div class="product-price">定价:<%= @product.price %> ￥ </div>
+  </div>
+  <div class="col-xs-12 col-md-2">
     <div class="pull-right">
       <% if @product.quantity.present? && @product.quantity > 0 %>
         <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
       <% else %>
         已销售一空，无法购买
       <% end %>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div style="height:100px;">
+      <h2>内容介绍...</h2>
+      <hr>
+      <p>
+        <%= @product.description %>
+      </p>
     </div>
   </div>
 </div>
