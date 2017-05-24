@@ -182,9 +182,10 @@ html, body {
 // }
 //product样式
 .thumbnail {
-    border: 0 none;
-    box-shadow: none;
-    margin-top: 10px;//商品照片与标题之间的距离
+  margin-top: 0px;//上部距离
+  margin-bottom: 0px;//下部距离
+  border: 0 none;
+  box-shadow: none;
 }
 //登陆弹窗样式
 .loginmodal-container {
