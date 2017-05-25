@@ -8,10 +8,11 @@
     <% end %>
   </div>
   <div class="col-xs-12 col-md-4" style="margin-top: 10px;">
-    <div>作者:<%= @product.writer %></div>
-    <div>出版社:</div>
-    <div>译者:</div>
-    <div>出版年:</div>
+    <div>作者:   <%= @product.writer %></div>
+    <div>出版社: <%= @product.prees %></div>
+    <div>副标题: <%= @product.subtitle %></div>
+    <div>译者:   <%= @product.translator %></div>
+    <div>出版年: <%= @product.year %></div>
     <!-- <div>版次:</div>
     <div>印次:</div>
     <div>印数:</div>
@@ -21,9 +22,9 @@
     <div>作者微博:</div>
     <div>译者微博:</div>
     <div>出版社微博:</div> -->
-    <div>页数:</div>
-    <div>ISBN:</div>
-    <div> 数量:<%= @product.quantity %></div>
+    <div>页数:  <%= @product.pages %></div>
+    <div>ISBN: <%= @product.ISBN %></div>
+    <div> 数量: <%= @product.quantity %></div>
     <div class="product-price">定价:<%= @product.price %> ￥ </div>
   </div>
   <div class="col-xs-12 col-md-2">
@@ -46,7 +47,7 @@
       <h4>作者介绍...</h4>
       <hr>
       <p>
-        <%= @product.description %>
+        <%= @product.about_author %>
       </p>
   </div>
 </div>
