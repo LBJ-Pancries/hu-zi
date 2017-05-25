@@ -2,9 +2,7 @@
 
 <%= simple_form_for [:admin, @product] do |f| %>
 
-  <div class="group">
-    <%= f.input :title %>
-  </div>
+  <%= f.input :title, :label => "标题"%>
 
   <%= f.input :writer, :label => "作者" %>
 
