@@ -225,3 +225,16 @@ html, body {
   width: 200px;
   padding: 7px;
 }
+
+.btn-danger {
+    color: #fff;
+    background-color: #4abc96;
+    border-color: #4abc96;
+}
+
+.jumbotron h1, .jumbotron .h1 {
+     text-align: left;//文字左对齐
+     color: #fff;  //字体颜色
+
+     padding: 50px 20px 0;//上50px，左右20px，下0
+}
