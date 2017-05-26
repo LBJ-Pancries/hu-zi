@@ -67,6 +67,7 @@ html, body {
 //navbar样式定义
 //navbar中logo的样式定义
 .navbar-brand > img {
+   
    display: inline-block; //图片和链接文字显示在同一行
    margin-right: 10px; //图片和链接文字拉开一点距离
    width: 32px; //定制图片宽度
@@ -237,4 +238,8 @@ html, body {
      color: #fff;  //字体颜色
 
      padding: 50px 20px 0;//上50px，左右20px，下0
+}
+
+.container {
+      width: 830px;
 }

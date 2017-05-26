@@ -6,6 +6,8 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
+
 <body>
   <div class="container">
     <%= render "common/navbar" %>
@@ -16,13 +18,14 @@
           <li> <%= link_to("Orders", admin_orders_path) %> </li>
         </ul>
       </div>
-      <div class="col-md-10 page-wrap">
-        <%= yield %>
-      </div>
-      <div class="row site-footer">
-        <%= render "common/footer" %>
-      </div>
+
+
     </div>
+    <%= yield %>
+    <%= render "common/footer" %>
   </div>
 </body>
+
+
+
 </html>
