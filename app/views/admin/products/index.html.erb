@@ -32,6 +32,8 @@
         <td><%= product.price %></td>
         <td>
           <%= link_to("Edit", edit_admin_product_path(product), :class => "btn btn-xs btn-info") %>
+          <%= link_to("Delete", admin_product_path(product), :class => "btn btn-xs btn-success",
+                      method: :delete, data: { confirm: "Are you sure?"} )%>
           <%= link_to "向上", move_up_admin_product_path(product), method: :patch, :class => "btn btn-xs btn-danger" %>
           <%= link_to "向下", move_down_admin_product_path(product), method: :patch, :class => "btn btn-xs btn-warning" %>
         </td>

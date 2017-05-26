@@ -35,6 +35,13 @@ class Admin::ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    flash[:alert] = "Product deleted"
+    redirect_to :back
+  end
+
   def move_up
     @product = Product.find(params[:id])
     @product.move_higher
