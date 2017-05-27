@@ -1,33 +1,36 @@
-<h2> New Product </h2>
-<%= simple_form_for [:admin, @product] do |f| %>
+<div class="container" style="margin-top: 50px;">
+  <h2> New Product </h2>
+  <%= simple_form_for [:admin, @product] do |f| %>
 
-  <%= f.input :title, :label => "标题"%>
+    <%= f.input :title, :label => "标题"%>
 
-  <%= f.input :writer, :label => "作者" %>
+    <%= f.input :writer, :label => "作者" %>
 
-  <%= f.input :prees, :label => "出版社" %>
+    <%= f.input :prees, :label => "出版社" %>
 
-  <%= f.input :subtitle, :label => "副标题" %>
+    <%= f.input :subtitle, :label => "副标题" %>
 
-  <%= f.input :translator, :label => "译者" %>
+    <%= f.input :translator, :label => "译者" %>
 
-  <%= f.input :year, :label => "出版年" %>
+    <%= f.input :year, :label => "出版年" %>
 
-  <%= f.input :pages, :label => "页数" %>
+    <%= f.input :pages, :label => "页数" %>
 
-  <%= f.input :ISBN, :label => "ISBN" %>
+    <!-- <%= f.input :ISBN, :label => "ISBN" %> -->
 
-  <%= f.input :quantity, :label => "数量" %>
+    <%= f.input :quantity, :label => "数量" %>
 
-  <%= f.input :price, :label => "参考价格" %>
+    <%= f.input :price, :label => "参考价格" %>
 
-  <%= f.input :description, :label => "内容介绍" %>
+    <%= f.input :description, :label => "内容介绍" %>
 
-  <%= f.input :about_author, :label => "作者介绍" %>
+    <%= f.input :about_author, :label => "作者介绍" %>
 
-  <div>
-    <%= f.input :image, as: :file %>
-  </div>
+    <div>
+      <%= f.input :image, as: :file %>
+    </div>
 
-  <%= f.submit "Submit", data: { disable_with: "Submitting..."} %>
-<% end %>
+    <%= f.submit "Submit", data: { disable_with: "Submitting..."} %>
+  <% end %>
+
+</div>
