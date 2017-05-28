@@ -25,8 +25,8 @@
 
 .jumbotron h1, .jumbotron .h1 {
      text-align: left;//文字左对齐
-     color: #fff;  //字体颜色
-
+     color: #f9f9f9;  //字体颜色
+text-align: center;
      padding: 50px 20px 0;//上50px，左右20px，下0
 }
 
@@ -34,9 +34,9 @@
      margin: 0;//上下左右margin为0
      font-size: 26px;//字体大小
      max-width: 500px;//最大宽度
-     background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
+     background-color: rgba(0, 0, 0, 0.0001);//背景颜色含透明度
      padding: 20px;//上下左右padding为20px
-     text-align:left;//文字左对齐
+     text-align: right;//文字左对齐
      color: #222;//字体颜色
 
      border-bottom-right-radius: 3px;//右下角圆边
@@ -65,7 +65,7 @@
 //修改文字对齐、背景
 .title {
   background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
-  max-width: 500px;//最大宽度
+  max-width: 200px;//最大宽度
   margin-top: 200px;//和顶部拉开距离
   margin-bottom: 0;//这样就可以紧接息面的描述文字
   border-top-right-radius: 3px;//右上角圆边
@@ -81,4 +81,52 @@
     border: 0 none;
     box-shadow: none;
     margin-top: 60px;
+}
+.group {
+    text-align: center;
+}
+//首页中的插图
+.img-thumbnail {
+    padding: 4px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+.short-line {
+    display: block;
+    background: #f96146;
+    border-style: none;
+    border-radius: 0;
+    margin: 20px auto 20px auto;
+    z-index: 53;
+    width: 200px;
+    height: 2px;
+    position: relative;
+}
+.feature-block {
+    display: block;
+    width: 290px;
+    position: relative;
+    margin: 20px 15px 0;
+    float: left;
+}
+.content-section {
+  position: relative;
+    width: auto;
+    margin: 30px 0 0 0;
+    padding: 0;
+    display: block;
+    margin-top: 60px;
+}
+.row-1 {
+    margin-left: -15px;
+    margin-right: -15px;
+    text-align: center;
 }
