@@ -26,6 +26,9 @@
 
     <%= f.input :about_author, :label => "作者介绍" %>
 
+    <%= select_tag(:category_id, options_for_select(@categories), :prompt => "商品类别") %>
+
+
     <div>
       <%= f.input :image, as: :file %>
     </div>
