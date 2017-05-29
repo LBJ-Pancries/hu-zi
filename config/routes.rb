@@ -27,6 +27,13 @@ Rails.application.routes.draw do
     collection do
       get :search
     end
+    collection do
+      get :dresses
+      get :jeans
+      get :skirts
+      get :shorts
+      get :suits
+    end
   end
 
   resources :carts do

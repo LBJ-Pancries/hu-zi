@@ -3,9 +3,36 @@
 </div>
 <div class="container" >
   <h4 class="jumbotron-h4">最新书籍</h4>
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li>
+                <%= link_to("Dresses", dresses_products_path) %>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav">
+              <li>
+                <%= link_to("Jeans", jeans_products_path) %>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav">
+              <li>
+                <%= link_to("Skirts", skirts_products_path) %>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav">
+              <li>
+                <%= link_to("Shorts", shorts_products_path) %>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav">
+              <li>
+                <%= link_to("Suits", suits_products_path) %>
+              </li>
+            </ul>
+        </div>
   <hr>
   <% @products.each do |product| %>
-    <div class="col-xs-3 col-md-3">
+    <div class="col-xs-6 col-md-3">
       <%= link_to product_path(product) do %>
         <% if product.image.present? %>
           <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
@@ -13,7 +40,7 @@
           <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
         <% end %>
       <% end %>
-      <%= product.title %> ￥ <%= product.price %>
+      <h4 style="margin-bottom: 0px; margin-left: 20px;"><%= product.title %> ￥ <%= product.price %></h4>
     </div>
   <% end %>
 </div>

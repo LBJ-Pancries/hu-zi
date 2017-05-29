@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 20170528032536) do
     t.integer  "pages"
     t.integer  "ISBN"
     t.text     "about_author"
-    t.integer  "category_id"
+    t.string   "category"
   end
 
   create_table "users", force: :cascade do |t|

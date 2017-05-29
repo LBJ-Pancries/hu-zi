@@ -9,12 +9,11 @@ class Admin::ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    @categories = Category.all.map { |c| [c.name, c.id] }
+
   end
 
   def create
     @product = Product.new(product_params)
-    @product.category_id = params[:category_id]
 
     if @product.save
       redirect_to admin_products_path
@@ -25,12 +24,11 @@ class Admin::ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
-    @categories = Category.all.map { |c| [c.name, c.id] }
+
   end
 
   def update
     @product = Product.find(params[:id])
-    @product.category_id = params[:category_id]
 
     if @product.update(product_params)
       redirect_to admin_products_path
@@ -59,9 +57,29 @@ class Admin::ProductsController < ApplicationController
 
   end
 
+  def dresses
+    @products = Product.where(:category => "dresses").paginate(:page => params[:page], :per_page => 5)
+  end
+
+  def jeans
+    @products = Product.where(:category => "jeans").paginate(:page => params[:page], :per_page => 5)
+  end
+
+  def skirts
+    @products = Product.where(:category => "skirts").paginate(:page => params[:page], :per_page => 5)
+  end
+
+  def shorts
+    @products = Product.where(:category => "shorts").paginate(:page => params[:page], :per_page => 5)
+  end
+
+  def suits
+    @products = Product.where(:category => "suits").paginate(:page => params[:page], :per_page => 5)
+  end
+
   private
 
   def product_params
-    params.require(:product).permit(:title, :writer, :description, :quantity, :price, :image, :press, :subtitle, :translator, :year, :pages, :ISBN, :about_author, :category_id)
+    params.require(:product).permit(:title, :writer, :description, :quantity, :price, :image, :press, :subtitle, :translator, :year, :pages, :ISBN, :about_author, :category)
   end
 end
