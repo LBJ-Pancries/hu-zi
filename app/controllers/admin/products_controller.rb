@@ -9,7 +9,7 @@ class Admin::ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    @category = Category.all.map { |c| [c.name, c,id] }
+    @categories = Category.all.map { |c| [c.name, c.id] }
   end
 
   def create
@@ -62,6 +62,6 @@ class Admin::ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:title, :writer, :description, :quantity, :price, :image, :press, :subtitle, :translator, :year, :pages, :ISBN, :about_author)
+    params.require(:product).permit(:title, :writer, :description, :quantity, :price, :image, :press, :subtitle, :translator, :year, :pages, :ISBN, :about_author, :category_id)
   end
 end
