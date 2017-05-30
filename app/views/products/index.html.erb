@@ -4,6 +4,11 @@
 </div>
 <div class="container" >
   <h4 class="jumbotron-h4">最新书籍</h4>
+  <% Category.all.each do |category| %>
+    <li>
+      <%= link_to(category.name, products_path(category: category.name)) %>
+    </li>
+  <% end %>
   <hr>
   <% @products.each do |product| %>
     <div class="col-xs-3 col-md-3">
