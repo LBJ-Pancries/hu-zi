@@ -1,31 +1,38 @@
 <div class="container" style="margin-top: 50px;">
   <div class="row">
     <div class="col-md-2">
-      <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
-        <li> <%= link_to("Products", admin_products_path) %> </li>
-        <li> <%= link_to("Orders", admin_orders_path) %> </li>
-      </ul>
+      <div class="dropdown" style="margin-top: 10px;">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Admin选单
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li> <%= link_to("Products", admin_products_path) %> </li>
+          <li> <%= link_to("Orders", admin_orders_path) %> </li>
+          <li> <%= link_to("Categories", admin_categories_path) %> </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-10">
+      <h2>订单列表</h2>
+      <table class="table table-bordered table-striped custab">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>生成时间</th>
+            <th>订购者</th>
+            <th>订单状态</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @orders.each do |order| %>
+          <tr>
+            <td><%= link_to(order.id, admin_order_path(order) ) %></td>
+            <td><%= order.created_at.to_s(:long) %></td>
+            <td><%= order.user.email %></td>
+            <td><%= order.aasm_state %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
-  <h2>订单列表</h2>
-  <table class="table table-bordered table-striped custab">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>生成时间</th>
-        <th>订购者</th>
-        <th>订单状态</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @orders.each do |order| %>
-      <tr>
-        <td><%= link_to(order.id, admin_order_path(order) ) %></td>
-        <td><%= order.created_at.to_s(:long) %></td>
-        <td><%= order.user.email %></td>
-        <td><%= order.aasm_state %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
 </div>
