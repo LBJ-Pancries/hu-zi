@@ -10,10 +10,8 @@
             </div>
             <div class="col-xs-2">
               <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-                  <h5>商品分类</h5>
-                  <span class="caret"></span>
-                </button>
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">商品分类
+                <span class="caret"></span></button>
                 <ul class="dropdown-menu">
                   <li role="presentation"><a role="menuitem" tabindex="-1" href="/products">BOOKS</a></li>
                   <li role="presentation" class="divider"></li>
@@ -27,15 +25,15 @@
             </div>
 
       </div>
-      
+
       <div class="col-xs-12">
         <% @products.each do |product| %>
           <div class="col-xs-3 col-md-3">
             <%= link_to product_path(product) do %>
               <% if product.image.present? %>
-                <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+                <%= image_tag(product.image.thumb.url, class: "img-thumbnail") %>
               <% else %>
-                <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "img-thumbnail") %>
               <% end %>
             <% end %>
             <%= product.title %> ￥ <%= product.price %>
