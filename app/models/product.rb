@@ -3,6 +3,7 @@ class Product < ApplicationRecord
   validates :image, presence: true
   validates :quantity, presence: true
   validates :price, presence: true
+  validates :category_id, presence: true
   mount_uploader :image, ImageUploader
   acts_as_list
   belongs_to :category
