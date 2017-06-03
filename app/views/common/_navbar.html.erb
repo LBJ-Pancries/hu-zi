@@ -89,6 +89,7 @@
            <%= f.button :submit, "Log in" %>
          </div>
          <%= link_to "用Google登录", user_google_oauth2_omniauth_authorize_path, class: "btn btn-primary btn-s" %>
+         <%= link_to "用Facebook登录", user_facebook_omniauth_authorize_path, class: "btn btn-info" %>
        <% end %>
     </div>
   </div>
@@ -109,6 +110,7 @@
             <%= f.button :submit, "Sign up" %>
         </div>
         <%= link_to "用Google登录", user_google_oauth2_omniauth_authorize_path, class: "btn btn-primary btn-s" %>
+        <%= link_to "用Facebook登录", user_facebook_omniauth_authorize_path, class: "btn btn-info" %>
       <% end %>
     </div>
   </div>

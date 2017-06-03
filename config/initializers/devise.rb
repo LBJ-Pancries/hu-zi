@@ -27,6 +27,8 @@ Devise.setup do |config|
   require 'devise/orm/active_record'
   require 'omniauth-google-oauth2'
    config.omniauth :google_oauth2, ENV["GOOGLE_CLIENT_ID"], ENV["GOOGLE_CLIENT_SECRET"], {access_type: "offline", approval_prompt: ""}
+  require 'omniauth-facebook'
+   config.omniauth :facebook, ENV["FACEBOOK_CLIENT_ID"], ENV["FACEBOOK_CLIENT_SECRET"]
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
