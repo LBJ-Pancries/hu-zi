@@ -45,6 +45,11 @@ gem 'ransack'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'seo_helper'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem 'omniauth-github'
+gem 'figaro'
 
 
 group :production do
