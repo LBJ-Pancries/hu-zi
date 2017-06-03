@@ -88,6 +88,7 @@
          <div class="form-actions">
            <%= f.button :submit, "Log in" %>
          </div>
+         <%= link_to "用Google登录", user_google_oauth2_omniauth_authorize_path, class: "btn btn-primary" %>
        <% end %>
     </div>
   </div>
@@ -107,6 +108,7 @@
         <div class="form-actions">
             <%= f.button :submit, "Sign up" %>
         </div>
+        <%= link_to "用Google登录", user_google_oauth2_omniauth_authorize_path, class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>
