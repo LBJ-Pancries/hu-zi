@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
-  devise_for :users, :controllers => {:omniauth_callbacks => "omniauth_callbacks"}
+  devise_for :users, :controllers => {:omniauth_callbacks => "omniauth_callbacks",
+                                      :sessions           => "users/sessions",
+                                      :registrations      => "users/registrations",
+                                      :passwords          => "users/passwords",
+                                     }
 
   namespace :admin do
     resources :products do

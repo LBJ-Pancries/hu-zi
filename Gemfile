@@ -50,6 +50,7 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'omniauth-github'
 gem 'figaro'
+gem 'intercom-rails'
 
 
 group :production do
