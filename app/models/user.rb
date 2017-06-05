@@ -10,6 +10,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable
 
+  has_many :groups
+
   def admin?
     is_admin
   end
