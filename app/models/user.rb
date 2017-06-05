@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_many :orders
   has_many :identifies
+  has_many :favorites
+  has_many :favorite_products, through: :favorites, source: :product
   validates :username, presence: true, length: {maximum: 25}
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :validate_search_key, only: [:search]
+  before_action :authenticate_user!, only: [:favorite, :unfavorite]
 
   def index
     if params[:category].blank?
@@ -32,6 +33,19 @@ class ProductsController < ApplicationController
       search_result = Product.ransack(@search_criteria).result(:distinct => true)
       @products = search_result.paginate(:page => params[:page], :per_page => 5 )
     end
+  end
+
+  def favorite
+    @product = Product.find(params[:id])
+    current_user.favorite_products << @product
+    redirect_to :back, notice:"您已经点赞！"
+  end
+
+  def unfavorite
+    @product = Product.fin(params[:id])
+    current_user.favorite_products.delete(@product)
+    redirect_to :back, notice: "您已经取消点赞！"
+
   end
 
   protected
