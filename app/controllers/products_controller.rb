@@ -42,7 +42,7 @@ class ProductsController < ApplicationController
   end
 
   def unfavorite
-    @product = Product.fin(params[:id])
+    @product = Product.find(params[:id])
     current_user.favorite_products.delete(@product)
     redirect_to :back, notice: "您已经取消点赞！"
 

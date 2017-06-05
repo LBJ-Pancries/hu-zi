@@ -19,7 +19,13 @@
             <%= image_tag(product.image.thumb.url, class: "img-thumbnail") %>
           </div>
           <h4><%= product.title %></h4>
-          
+          <div>
+            <% if !product.users.include?(current_user) %>
+              <%= link_to("",favorite_product_path(product),method: :post, class: "fa fa-thumbs-o-up fa-2x") %><%= product.users.count %>
+            <% else %>
+              <%= link_to("",unfavorite_product_path(product),method: :post, class: "fa fa-thumbs-up fa-2x", style: "color:red") %><%= product.users.count%>
+            <% end %>
+          </div>
           <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
