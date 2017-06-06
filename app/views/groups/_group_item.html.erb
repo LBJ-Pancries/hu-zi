@@ -2,6 +2,13 @@
   <td>#</td>
   <td><%= link_to(group.title, group_path(group)) %></td>
   <td><%= render_group_description(group) %></td>
+  <td>
+    <% if current_user && current_user.is_member_of?(group) %>
+      <label class="label label-success"> 未收藏 </label>
+    <% else %>
+      <label class="label label-warning"> 已收藏 </label>
+    <% end %>
+  </td>
   <td><%= group.user.email %></td>
   <td>
     <% if current_user && current_user == group.user %>

@@ -18,10 +18,10 @@
         <div class="navbar-collapse navbar-ex1-collapse collapse" aria-expanded="false" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
               <li class="active" style="margin-left: 10px;">
-                <%= link_to("文章", groups_path) %>
+                <%= link_to("Movie", groups_path) %>
               </li>
               <li class="active">
-                <%= link_to("商店", products_path) %>
+                <%= link_to("Book", products_path) %>
               </li>
             </ul>
 
@@ -66,8 +66,8 @@
                     <% end %>
                     <li> <%= link_to("My 订单列表", account_orders_path ) %></li>
                     <li> <%= link_to("My 点赞", favorites_path) %></li>
-                    <li> <%= link_to("My Groups", account_groups_path) %></li>
-                    <li> <%= link_to("My Posts", account_groups_path) %></li>
+                    <li> <%= link_to("My Movie", account_groups_path) %></li>
+                    <li> <%= link_to("My Review", account_groups_path) %></li>
                     <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %></li>
                   </ul>
                 </li>
