@@ -59,6 +59,8 @@ Rails.application.routes.draw do
    resources :orders
  end
 
- resources :groups
+ resources :groups do
+   resources :posts
+ end
 
 end

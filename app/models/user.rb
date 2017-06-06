@@ -11,6 +11,7 @@ class User < ApplicationRecord
          :omniauthable
 
   has_many :groups
+  has_many :posts
 
   def admin?
     is_admin
