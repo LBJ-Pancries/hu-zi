@@ -89,6 +89,11 @@ html, body {
 
    margin-bottom: 10px; //底部 margin 不撑开距离
 }
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    color: #fff;
+    background-color: #4abc96;
+}
 // .navbar-default {
 //     background-color: #f8f8f8;
 //     border-color: #e7e7e7;
@@ -109,13 +114,13 @@ html, body {
 //     padding-right: 15px;
 // }
 
-//flashes的样式定义
-// .alert {
-//     padding: 15px;
-//     margin-bottom: 0px; //与头图之间的距离
-//     border: 1px solid transparent;
-//     border-radius: 4px;
-// }
+// flashes的样式定义
+.alert {
+    padding: 15px;
+    margin-bottom: 0px; //与头图之间的距离
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
 //product样式
 .thumbnail {
     border: 0 none;
@@ -226,7 +231,7 @@ html, body {
   width: 200px;
   padding: 7px;
 }
-
+// 首页按钮颜色
 .btn-danger {
     color: #fff;
     background-color: #4abc96;

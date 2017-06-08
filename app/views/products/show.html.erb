@@ -1,5 +1,6 @@
 <div class="container" style="margin-top: 100px;">
   <div >
+    <!-- 图文 -->
     <div class="col-md-2">
         <% if @product.image.present? %>
           <%= image_tag(@product.image.medium.url, class: "img-thumbnail") %>
@@ -27,13 +28,14 @@
           <div> 类别: <%= @product.category.name %></div>
           <div>
             <% if !@product.users.include?(current_user) %>
-              <%= link_to("",favorite_product_path(@product),method: :post, class: "fa fa-thumbs-o-up fa-2x") %><%= @product.users.count %>
+              <%= link_to("",favorite_product_path(@product),method: :post, class: "fa fa-thumbs-o-up fa-2x", style: "color: #4abc96") %><%= @product.users.count %>
             <% else %>
-              <%= link_to("",unfavorite_product_path(@product),method: :post, class: "fa fa-thumbs-up fa-2x", style: "color:red") %><%= @product.users.count%>
+              <%= link_to("",unfavorite_product_path(@product),method: :post, class: "fa fa-thumbs-up fa-2x", style: "color: #4abc96") %><%= @product.users.count%>
             <% end %>
           </div>
         </div>
     </div>
+    <!-- 内容和作者介绍 -->
     <div class="col-md-7">
       <div>
           <h2 style="margin-bottom: 0px; margin-left: 20px;"><%= @product.title %></h2>
@@ -51,6 +53,7 @@
           </p>
       </div>
     </div>
+    <!-- 购买商品栏位 -->
     <div class="col-md-3">
       <div class="panel panel-default">
         <div class="panel-heading">购买商品</div>
