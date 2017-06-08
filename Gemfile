@@ -51,6 +51,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-github'
 gem 'figaro'
 gem 'intercom-rails'
+gem 'rails-erd'
 
 
 group :production do
