@@ -19,7 +19,12 @@ Rails.application.routes.draw do
       end
     end
     resources :categories
-    resources :jobs
+    resources :jobs do
+      member do
+        post :publish
+        post :hide
+      end
+    end
   end
 
   resources :products do
