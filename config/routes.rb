@@ -48,16 +48,16 @@ Rails.application.routes.draw do
   end
 
   resources :favorites
-
   resources :cart_items
+  resources :jobs
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
- namespace :account do
+  namespace :account do
    resources :groups
    resources :posts
    resources :orders
  end
 
- resources :groups do
+  resources :groups do
    member do
      post :join
      post :quit
