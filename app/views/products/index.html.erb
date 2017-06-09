@@ -27,9 +27,9 @@
           <!-- 收藏按钮 -->
           <div>
             <% if !product.users.include?(current_user) %>
-              <%= link_to("",favorite_product_path(product),method: :post, class: "fa fa-thumbs-o-up fa-2x", style: "color: #4abc96") %><%= product.users.count %>
+              <%= link_to(product.users.count,favorite_product_path(product),method: :post, class: "fa fa-thumbs-o-up fa-2x", style: "color: #4abc96") %>
             <% else %>
-              <%= link_to("",unfavorite_product_path(product),method: :post, class: "fa fa-thumbs-up fa-2x", style: "color: #4abc96") %><%= product.users.count%>
+              <%= link_to(product.users.count,unfavorite_product_path(product),method: :post, class: "fa fa-thumbs-up fa-2x", style: "color: #4abc96") %>
             <% end %>
           </div>
         </div>
