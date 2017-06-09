@@ -19,6 +19,7 @@ Rails.application.routes.draw do
       end
     end
     resources :categories
+    resources :jobs
   end
 
   resources :products do
