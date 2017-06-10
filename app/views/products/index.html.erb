@@ -1,39 +1,36 @@
-<div class="container">
-  <!-- BOOK标签 -->
-  <div class="row">
-    <div class="col-xs-2">
-      <ul class="nav nav-pills nav-stacked">
-        <li class="active" role="presentation"><a role="menuitem" tabindex="-1" href="/products">BOOKS</a></li>
-        <li role="presentation" class="divider"></li>
-        <% Category.all.each do |category| %>
-          <li>
-            <%= link_to(category.name, products_path(category: category.name)) %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-    <!-- 商品展示 -->
-    <div class="col-xs-10">
-      <% @products.each do |product| %>
-        <div class=" col-md-3">
-          <%= link_to product_path(product) do %>
-            <% if product.image.present? %>
-              <%= image_tag(product.image.thumb.url, class: "img-thumbnail") %>
-            <% else %>
-              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "img-thumbnail") %>
-            <% end %>
-          <% end %>
-          <h4><%= product.title %></h4>
-          <!-- 收藏按钮 -->
-          <div>
-            <% if !product.users.include?(current_user) %>
-              <%= link_to(product.users.count,favorite_product_path(product),method: :post, class: "fa fa-thumbs-o-up fa-2x", style: "color: #4abc96") %>
-            <% else %>
-              <%= link_to(product.users.count,unfavorite_product_path(product),method: :post, class: "fa fa-thumbs-up fa-2x", style: "color: #4abc96") %>
-            <% end %>
-          </div>
-        </div>
+<div class="row">
+  <div class="col-xs-2">
+    <ul class="nav nav-pills nav-stacked">
+      <li class="active" role="presentation"><a role="menuitem" tabindex="-1" href="/products">BOOKS</a></li>
+      <li role="presentation" class="divider"></li>
+      <% Category.all.each do |category| %>
+        <li>
+          <%= link_to(category.name, products_path(category: category.name)) %>
+        </li>
       <% end %>
-    </div>
+    </ul>
+  </div>
+  <!-- 商品展示 -->
+  <div class="col-xs-10">
+    <% @products.each do |product| %>
+      <div class=" col-md-3">
+        <%= link_to product_path(product) do %>
+          <% if product.image.present? %>
+            <%= image_tag(product.image.thumb.url, class: "img-thumbnail") %>
+          <% else %>
+            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "img-thumbnail") %>
+          <% end %>
+        <% end %>
+        <h4><%= product.title %></h4>
+        <!-- 收藏按钮 -->
+        <div>
+          <% if !product.users.include?(current_user) %>
+            <%= link_to(product.users.count,favorite_product_path(product),method: :post, class: "fa fa-thumbs-o-up fa-2x", style: "color: #4abc96") %>
+          <% else %>
+            <%= link_to(product.users.count,unfavorite_product_path(product),method: :post, class: "fa fa-thumbs-up fa-2x", style: "color: #4abc96") %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
