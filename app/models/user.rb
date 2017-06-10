@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :favorites
   has_many :groups
   has_many :posts
+  has_many :resumes
   has_many :group_relationships
   has_many :favorite_products, through: :favorites, source: :product
   has_many :participated_groups, :through => :group_relationships, :source => :group
