@@ -1,82 +1,80 @@
-<div class="container" style="margin-top: 100px;">
-  <div >
-    <!-- 图文 -->
-    <div class="col-md-2">
-        <% if @product.image.present? %>
-          <%= image_tag(@product.image.medium.url, class: "img-thumbnail") %>
-        <% else %>
-          <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "img-thumbnail") %>
-        <% end %>
-        <div >
-          <div>作者:   <%= @product.writer %></div>
-          <div>出版社: <%= @product.prees %></div>
-          <div>副标题: <%= @product.subtitle %></div>
-          <div>译者:   <%= @product.translator %></div>
-          <div>出版年: <%= @product.year %></div>
-          <!-- <div>版次:</div>
-          <div>印次:</div>
-          <div>印数:</div>
-          <div>编与著:</div>
-          <div>参考文献:</div>
-          <div>索引:</div>
-          <div>作者微博:</div>
-          <div>译者微博:</div>
-          <div>出版社微博:</div> -->
-          <div>页数:  <%= @product.pages %></div>
-          <!-- <div>ISBN: <%= @product.ISBN %></div> -->
-          <div> 数量: <%= @product.quantity %></div>
-          <div> 类别: <%= @product.category.name %></div>
-          <div>
-            <% if !@product.users.include?(current_user) %>
-              <%= link_to("",favorite_product_path(@product),method: :post, class: "fa fa-thumbs-o-up fa-2x", style: "color: #4abc96") %><%= @product.users.count %>
+<div >
+  <!-- 图文 -->
+  <div class="col-md-2">
+      <% if @product.image.present? %>
+        <%= image_tag(@product.image.medium.url, class: "img-thumbnail") %>
+      <% else %>
+        <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "img-thumbnail") %>
+      <% end %>
+      <div >
+        <div>作者:   <%= @product.writer %></div>
+        <div>出版社: <%= @product.prees %></div>
+        <div>副标题: <%= @product.subtitle %></div>
+        <div>译者:   <%= @product.translator %></div>
+        <div>出版年: <%= @product.year %></div>
+        <!-- <div>版次:</div>
+        <div>印次:</div>
+        <div>印数:</div>
+        <div>编与著:</div>
+        <div>参考文献:</div>
+        <div>索引:</div>
+        <div>作者微博:</div>
+        <div>译者微博:</div>
+        <div>出版社微博:</div> -->
+        <div>页数:  <%= @product.pages %></div>
+        <!-- <div>ISBN: <%= @product.ISBN %></div> -->
+        <div> 数量: <%= @product.quantity %></div>
+        <div> 类别: <%= @product.category.name %></div>
+        <div>
+          <% if !@product.users.include?(current_user) %>
+            <%= link_to("",favorite_product_path(@product),method: :post, class: "fa fa-thumbs-o-up fa-2x", style: "color: #4abc96") %><%= @product.users.count %>
+          <% else %>
+            <%= link_to("",unfavorite_product_path(@product),method: :post, class: "fa fa-thumbs-up fa-2x", style: "color: #4abc96") %><%= @product.users.count%>
+          <% end %>
+        </div>
+      </div>
+  </div>
+  <!-- 内容和作者介绍 -->
+  <div class="col-md-7">
+    <div>
+        <h2 style="margin-bottom: 0px; margin-left: 20px;"><%= @product.title %></h2>
+        <h4>内容介绍...</h4>
+        <hr>
+        <p>
+          <%= @product.description %>
+        </p>
+    </div>
+    <div >
+        <h4>作者介绍...</h4>
+        <hr>
+        <p>
+          <%= @product.about_author %>
+        </p>
+    </div>
+  </div>
+  <!-- 购买商品栏位 -->
+  <div class="col-md-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">购买商品</div>
+      <div class="panel-body">
+          商品价值： <%= @product.price %>¥
+          <br>
+          <br>
+          价格和运费在结账时才会最终确认。
+          <br>
+          <br>
+          您可以取消订单，前提是您希望退回的商品在不
+          迟于您收到订单商品后的30天内送达给我们。
+          您可在此找到退换货政策全文  退货和退款
+          <br>
+          <br>
+          <div >
+            <% if @product.quantity.present? && @product.quantity > 0 %>
+              <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
             <% else %>
-              <%= link_to("",unfavorite_product_path(@product),method: :post, class: "fa fa-thumbs-up fa-2x", style: "color: #4abc96") %><%= @product.users.count%>
+              已销售一空，无法购买
             <% end %>
           </div>
-        </div>
-    </div>
-    <!-- 内容和作者介绍 -->
-    <div class="col-md-7">
-      <div>
-          <h2 style="margin-bottom: 0px; margin-left: 20px;"><%= @product.title %></h2>
-          <h4>内容介绍...</h4>
-          <hr>
-          <p>
-            <%= @product.description %>
-          </p>
-      </div>
-      <div >
-          <h4>作者介绍...</h4>
-          <hr>
-          <p>
-            <%= @product.about_author %>
-          </p>
-      </div>
-    </div>
-    <!-- 购买商品栏位 -->
-    <div class="col-md-3">
-      <div class="panel panel-default">
-        <div class="panel-heading">购买商品</div>
-        <div class="panel-body">
-            商品价值： <%= @product.price %>¥
-            <br>
-            <br>
-            价格和运费在结账时才会最终确认。
-            <br>
-            <br>
-            您可以取消订单，前提是您希望退回的商品在不
-            迟于您收到订单商品后的30天内送达给我们。
-            您可在此找到退换货政策全文  退货和退款
-            <br>
-            <br>
-            <div >
-              <% if @product.quantity.present? && @product.quantity > 0 %>
-                <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
-              <% else %>
-                已销售一空，无法购买
-              <% end %>
-            </div>
-        </div>
       </div>
     </div>
   </div>

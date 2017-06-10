@@ -1,23 +1,19 @@
-<div class="container" style="margin-top: 80px;">
-  <h2>Log in</h2>
+<h2>Log in</h2>
 
-  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="form-inputs">
-      <%= f.input :email, required: false, autofocus: true %>
-      <%= f.input :password, required: false %>
-      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-    </div>
-
-    <div class="form-actions">
-      <%= f.button :submit, "Log in" %>
-    </div>
-  <% end %>
-
-  <div style="margin-top: 20px;">
-    <%= link_to "用Google登录", user_google_oauth2_omniauth_authorize_path, class: "btn btn-primary" %>
-    <%= link_to "用Facebook登录", user_facebook_omniauth_authorize_path, class: "btn btn-info" %>
-    <%= link_to "Sign up with Github", user_github_omniauth_authorize_path, class: "btn btn-danger" %>
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-inputs">
+    <%= f.input :email, required: false, autofocus: true %>
+    <%= f.input :password, required: false %>
+    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>
 
-  <!-- <%= render "devise/shared/links" %> -->
+  <div class="form-actions">
+    <%= f.button :submit, "Log in" %>
+  </div>
+<% end %>
+
+<div style="margin-top: 20px;">
+  <%= link_to "用Google登录", user_google_oauth2_omniauth_authorize_path, class: "btn btn-primary" %>
+  <%= link_to "用Facebook登录", user_facebook_omniauth_authorize_path, class: "btn btn-info" %>
+  <%= link_to "Sign up with Github", user_github_omniauth_authorize_path, class: "btn btn-danger" %>
 </div>

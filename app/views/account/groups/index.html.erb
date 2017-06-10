@@ -1,29 +1,27 @@
-<div class="container" style="margin-top: 50px;">
-  <div class="col-md-12">
-    <h2 class="text-center"> 我关注的电影 </h2>
+<div class="col-md-12">
+  <h2 class="text-center"> 我关注的电影 </h2>
 
-    <table class="table">
-      <thead>
+  <table class="table">
+    <thead>
+      <tr>
+        <th> # </th>
+        <th> Movie </th>
+        <th> Review </th>
+        <th> 留言数 </th>
+        <th> Last Update </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @groups.each do |group| %>
         <tr>
-          <th> # </th>
-          <th> Movie </th>
-          <th> Review </th>
-          <th> 留言数 </th>
-          <th> Last Update </th>
+          <td> # </td>
+          <td> <%= link_to(group.title, group_path(group)) %> </td>
+          <td> <%= render_group_description(group)%> </td>
+          <td> <%= group.posts.count %> </td>
+          <td> <%= group.updated_at %> </td>
         </tr>
-      </thead>
-
-      <tbody>
-        <% @groups.each do |group| %>
-          <tr>
-            <td> # </td>
-            <td> <%= link_to(group.title, group_path(group)) %> </td>
-            <td> <%= render_group_description(group)%> </td>
-            <td> <%= group.posts.count %> </td>
-            <td> <%= group.updated_at %> </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+      <% end %>
+    </tbody>
+  </table>
 </div>
