@@ -3,6 +3,12 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => {:omniauth_callbacks => "omniauth_callbacks"}
 
+  namespace :account do
+   resources :groups
+   resources :posts
+   resources :orders
+  end
+
   namespace :admin do
     resources :products do
       member do
@@ -24,6 +30,7 @@ Rails.application.routes.draw do
         post :publish
         post :hide
       end
+      resources :resumes
     end
   end
 
@@ -53,24 +60,21 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :favorites
-  resources :cart_items
-  resources :jobs do
-    resources :resumes
-  end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  namespace :account do
-   resources :groups
-   resources :posts
-   resources :orders
- end
-
   resources :groups do
    member do
      post :join
      post :quit
    end
    resources :posts
- end
+  end
+
+  resources :jobs do
+    resources :resumes
+  end
+
+  resources :favorites
+  resources :cart_items
+
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 end
